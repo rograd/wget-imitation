@@ -1,0 +1,141 @@
+:root {
+    --light: #edf2f4;
+    --dark: #28353b;
+    --radius: 4px;
+    --padding-sm: 0.3rem 0.6rem;
+    --padding-md: 0.5rem 1rem;
+    --padding-lg: 0.6rem 1.2rem;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #7499a9;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: sans-serif;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+header {
+    align-self: center;
+    text-align: center;
+}
+
+.php {
+    background-color: #46788d;
+    padding: var(--padding-lg);
+    border-radius: 50%;
+    font-family: Verdana, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: var(--light);
+    display: inline-block;
+    position: relative;
+}
+
+.php::after {
+    content: 'no cURL';
+    white-space: nowrap;
+    padding: 0.3rem 0.6rem;
+    transform: rotate(15deg);
+    position: absolute;
+    top: -0.3rem;
+    right: -2rem;
+    font-size: medium;
+    border: 1px dashed darkred;
+    color: darkred;
+}
+
+h2 {
+    text-decoration: underline;
+    color: var(--dark);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+input,
+button[type="submit"] {
+    border: none;
+    padding: var(--padding-sm);
+    border-radius: var(--radius);
+}
+
+input {
+    background-color: #c7d6dd;
+    color: #243036;
+}
+
+input::placeholder {
+    color: #777;
+}
+
+button[type="submit"] {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+button[type="submit"]:is(:hover, :focus) {
+    cursor: pointer;
+}
+
+.logs {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: var(--padding-md);
+    border-radius: var(--radius);
+
+}
+
+a:is(:link, :visited) {
+    color: var(--light);
+}
+
+a:is(:hover, :focus) {
+
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    color: var(--light);
+}
+
+li:is(:hover, :focus) {
+    cursor: pointer;
+    text-decoration: underline dotted 1px var(--light);
+}
+
+li:is(:hover, :focus)::marker {
+    content: '\203A';
+}
+
+p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.success {
+    color: lightgreen;
+}
+
+.error {
+    color: #aa0000;
+}
